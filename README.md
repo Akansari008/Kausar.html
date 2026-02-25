@@ -141,7 +141,23 @@ We are long distance… but my drama travels faster than the internet.
 
 <h2>Countdown Until We Meet 💕</h2>
 <div id="countdown"></div>
-
+<script>
+// Countdown set to exactly 349 days
+var countDownDate = new Date().getTime() + (349 * 24 * 60 * 60 * 1000);
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("countdown").innerHTML =
+    days + " Days " + hours + " Hours " + minutes + " Minutes ❤️";
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Finally Together ❤️";
+    }
+}, 1000);
+</script>
 <p>
 Even if there are miles between us,  
 my heart still annoys you in real-time.  
